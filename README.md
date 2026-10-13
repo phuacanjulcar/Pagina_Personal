@@ -135,27 +135,7 @@ flowchart LR
     Listo --> EnProceso
 ```
 
----
-
-## 6. Cómo abrir o probar el proyecto
-
-### En tu computadora (Uso local)
-No requiere instalar programas complejos, servidores locales ni terminales:
-1. Descarga o clona la carpeta del proyecto.
-2. Haz doble clic sobre el archivo `index.html`.
-3. Se abrirá automáticamente en tu navegador web preferido (Chrome, Edge, Firefox, Safari).
-
-### En internet (Publicación en GitHub Pages)
-Para tener el portafolio público con tu enlace personal:
-1. En tu repositorio de GitHub, dirígete a la pestaña **Settings** (Ajustes).
-2. En el menú lateral izquierdo, haz clic en **Pages**.
-3. En la sección **Build and deployment > Branch**, selecciona la rama `main` y la carpeta `/ (root)`.
-4. Pulsa en **Save** (Guardar). En pocos minutos, tu portafolio estará disponible en una dirección pública similar a:
-   `https://phuacanjulcar.github.io/Pagina_Personal/`
-
----
-
-## 7. Próximos pasos y documentación
+## 6. Próximos pasos y documentación
 
 - **Carpeta `assets/docs/`:** Actualmente en proceso. En futuras actualizaciones albergará la versión descargable más reciente del currículum vitae en formato PDF, así como manuales breves o documentación técnica complementaria de los proyectos ejecutados.
 - **Finalización de proyectos:** Las tarjetas en fase demo recibirán enlaces a sus repositorios individuales y demostraciones interactivas conforme se completen las pruebas.
