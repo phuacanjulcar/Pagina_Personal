@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedro Pablo Huacanjulca Rodríguez | Portafolio</title>
+    <meta name="description"
+        content="Portafolio de Pedro Pablo Huacanjulca Rodríguez, estudiante de Ingeniería de Sistemas en la UNI. Desarrollo de software, bases de datos y análisis de datos.">
+    <!-- Hoja de estilos pura sin dependencias -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Puntero del ratón interactivo y dinámico -->
+    <div id="cursor-punto" class="cursor-punto" aria-hidden="true"></div>
+    <div id="cursor-anillo" class="cursor-anillo" aria-hidden="true"></div>
+
+    <!-- Barra de progreso de lectura superior -->
+    <div id="barra-progreso" class="barra-progreso" role="progressbar" aria-label="Progreso de lectura de la página"
+        aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+
+    <!-- Fondo ambiental decorativo con CSS puro (detrás del contenido) -->
+    <div class="fondo-decorativo" aria-hidden="true">
+        <div class="orbe orbe-1"></div>
+        <div class="orbe orbe-2"></div>
+    </div>
+
+    <!-- Enlace de salto accesible para usuarios de teclado y lectores de pantalla -->
+    <a href="#principal" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- Encabezado y Navegación Principal -->
+    <header class="encabezado">
+        <div class="contenedor barra-navegacion">
+            <a href="#inicio" class="logo" aria-label="Inicio del portafolio">
+                <span class="logo-texto">PP</span>
+            </a>
+
+            <nav id="menu-principal" aria-label="Navegación principal">
+                <ul class="nav-lista">
+                    <li><a href="#inicio" class="nav-enlace">Inicio</a></li>
+                    <li><a href="#sobre-mi" class="nav-enlace">Sobre mí</a></li>
+                    <li><a href="#habilidades" class="nav-enlace">Habilidades</a></li>
+                    <li><a href="#competencias" class="nav-enlace">Competencias</a></li>
+                    <li><a href="#proyectos" class="nav-enlace">Proyectos</a></li>
+                    <li><a href="#certificaciones" class="nav-enlace">Certificaciones</a></li>
+                    <li><a href="#contacto" class="nav-enlace">Contacto</a></li>
+                    <li class="nav-subrayado-item" aria-hidden="true"><span class="nav-subrayado"></span></li>
+                </ul>
+            </nav>
+
+            <button id="boton-tema" class="boton-tema" type="button" aria-label="Cambiar a tema oscuro"
+                aria-pressed="false">
+                <svg class="icono-tema icono-sol" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="icono-tema icono-luna" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <svg class="icono-tema icono-neon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <main id="principal">
+        <!-- 1. Inicio (Hero) -->
+        <section id="inicio" class="hero seccion-revelar" aria-labelledby="titulo-principal">
+            <div class="contenedor hero-contenedor">
+                <div class="hero-layout">
+                    <!-- Avatar original en SVG animado con iniciales PP -->
+                    <div class="avatar-envoltorio" aria-hidden="true">
+                        <div class="avatar-aura"></div>
+                        <svg class="avatar-svg" width="128" height="128" viewBox="0 0 128 128" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="grad-avatar" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="var(--color-acento)" />
+                                    <stop offset="100%" stop-color="var(--color-secundario)" />
+                                </linearGradient>
+                                <linearGradient id="grad-fondo-avatar" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="var(--color-superficie)" />
+                                    <stop offset="100%" stop-color="var(--color-superficie-hover)" />
+                                </linearGradient>
+                            </defs>
+                            <!-- Anillo exterior rotatorio punteado -->
+                            <circle cx="64" cy="64" r="58" stroke="url(#grad-avatar)" stroke-width="2.5"
+                                stroke-dasharray="8 6" class="avatar-anillo" />
+                            <!-- Círculo interior de base -->
+                            <circle cx="64" cy="64" r="50" fill="url(#grad-fondo-avatar)"
+                                stroke="var(--color-borde-fuerte)" stroke-width="1.5" />
+                            <!-- Iniciales PP centradas con precisión matemática en (64, 64) -->
+                            <g class="avatar-monograma" fill="url(#grad-avatar)">
+                                <!-- Primera 'P' simétrica izquierda (X: 38 a 62) -->
+                                <path
+                                    d="M38 45 h13 c6.6 0 11 3.8 11 10 c0 6.2 -4.4 10 -11 10 h-6 v14 h-7 z m7 5.5 v9 h6 c3.2 0 5 -1.8 5 -4.5 c0 -2.7 -1.8 -4.5 -5 -4.5 z" />
+                                <!-- Segunda 'P' simétrica derecha (X: 66 a 90) -->
+                                <path
+                                    d="M66 45 h13 c6.6 0 11 3.8 11 10 c0 6.2 -4.4 10 -11 10 h-6 v14 h-7 z m7 5.5 v9 h6 c3.2 0 5 -1.8 5 -4.5 c0 -2.7 -1.8 -4.5 -5 -4.5 z"
+                                    opacity="0.95" />
+                            </g>
+                            <!-- Nodos de conexión simétricos (tecnología/sistemas) -->
+                            <circle cx="64" cy="14" r="3" fill="var(--color-acento)" />
+                            <circle cx="104" cy="82" r="2.5" fill="var(--color-secundario)" />
+                            <circle cx="24" cy="82" r="2.5" fill="var(--color-acento)" />
+                        </svg>
+                    </div>
+
+                    <!-- Contenido textual Hero -->
+                    <div class="hero-texto">
+                        <span class="insignia-hero">Disponible para prácticas preprofesionales</span>
+                        <h1 id="titulo-principal">Pedro Pablo Huacanjulca Rodríguez</h1>
+
+                        <!-- Subtítulo con efecto de escritura y fallback accesible estático -->
+                        <div class="subtitulo-contenedor" aria-label="Estudiante de Ingeniería de Sistemas · UNI">
+                            <!-- Versión estática accesible para lectores de pantalla -->
+                            <p class="sr-only">Estudiante de Ingeniería de Sistemas · UNI · Desarrollo de software y
+                                Análisis de datos</p>
+                            <!-- Visual dinámico con alternancia mecanográfica -->
+                            <p class="subtitulo" aria-hidden="true">
+                                <span class="texto-dinamico" id="typewriter-texto">Estudiante de Ingeniería de
+                                    Sistemas</span>
+                                <span class="cursor-mecanografia"></span>
+                                <span class="subtitulo-uni"> · UNI</span>
+                            </p>
+                        </div>
+
+                        <p class="frase-corta">Desarrollo software y trabajo con datos; enfocado en construir soluciones
+                            eficientes, mantenibles y orientadas a problemas reales</p>
+                        <div class="botones">
+                            <a class="boton boton-primario" href="#proyectos">Ver proyectos</a>
+                            <a class="boton boton-secundario" href="CV_Pedro_Huacanjulca.pdf" target="_blank"
+                                rel="noopener">
+                                Descargar CV <span class="sr-only">(abre archivo PDF en pestaña nueva)</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Sobre mí -->
+        <section id="sobre-mi" class="seccion seccion-revelar" aria-labelledby="titulo-sobre-mi">
+            <div class="contenedor">
+                <div class="encabezado-seccion">
+                    <h2 id="titulo-sobre-mi">Sobre mí</h2>
+                    <p class="descripcion-seccion">Síntesis didáctica de perfil académico, enfoque técnico y metas profesionales</p>
+                </div>
+                <div class="tarjeta tarjeta-sobre-mi">
+                    <p class="texto-destacado">
+                        Soy estudiante de 6.º ciclo de Ingeniería de Sistemas en la UNI; me interesa el desarrollo de
+                        software, el análisis de datos y la automatización de procesos, y aprendo construyendo proyectos
+                        que resuelven problemas reales, como el control de inventarios de un albergue infantil
+                    </p>
+
+                    <div class="grilla-didactica-sobre-mi">
+                        <!-- Pilar 1: Formación académica -->
+                        <div class="tarjeta-didactica">
+                            <div class="cabecera-didactica">
+                                <div class="icono-didactico" aria-hidden="true">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                                        <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="titulo-didactico">Formación académica</h3>
+                            </div>
+                            <span class="etiqueta-didactica">UNI · 6.º ciclo</span>
+                            <p class="texto-didactico">Estudiante de Ingeniería de Sistemas en la Universidad Nacional de Ingeniería (UNI) con formación en algoritmos, arquitectura de software y modelado de sistemas</p>
+                        </div>
+
+                        <!-- Pilar 2: Enfoque tecnológico -->
+                        <div class="tarjeta-didactica">
+                            <div class="cabecera-didactica">
+                                <div class="icono-didactico" aria-hidden="true">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="16 18 22 12 16 6"></polyline>
+                                        <polyline points="8 6 2 12 8 18"></polyline>
+                                    </svg>
+                                </div>
+                                <h3 class="titulo-didactico">Enfoque técnico</h3>
+                            </div>
+                            <span class="etiqueta-didactica">Software y datos</span>
+                            <p class="texto-didactico">Desarrollo de software estructurado, gestión de bases de datos relacionales y análisis de datos enfocado en soluciones mantenibles</p>
+                        </div>
+
+                        <!-- Pilar 3: Aprendizaje aplicado -->
+                        <div class="tarjeta-didactica">
+                            <div class="cabecera-didactica">
+                                <div class="icono-didactico" aria-hidden="true">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                        <line x1="8" y1="21" x2="16" y2="21"></line>
+                                        <line x1="12" y1="17" x2="12" y2="21"></line>
+                                    </svg>
+                                </div>
+                                <h3 class="titulo-didactico">Aprendizaje aplicado</h3>
+                            </div>
+                            <span class="etiqueta-didactica">Problemas reales</span>
+                            <p class="texto-didactico">Resolución práctica de necesidades operativas, como el diseño del sistema de inventarios y trazabilidad para un albergue infantil</p>
+                        </div>
+
+                        <!-- Pilar 4: Objetivo profesional -->
+                        <div class="tarjeta-didactica">
+                            <div class="cabecera-didactica">
+                                <div class="icono-didactico" aria-hidden="true">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <circle cx="12" cy="12" r="6"></circle>
+                                        <circle cx="12" cy="12" r="2"></circle>
+                                    </svg>
+                                </div>
+                                <h3 class="titulo-didactico">Objetivo profesional</h3>
+                            </div>
+                            <span class="etiqueta-didactica">Prácticas preprofesionales</span>
+                            <p class="texto-didactico">Interés activo en integrarme a equipos de tecnología para aportar en desarrollo o análisis de datos y seguir aprendiendo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Habilidades técnicas -->
+        <section id="habilidades" class="seccion seccion-revelar" aria-labelledby="titulo-habilidades">
+            <div class="contenedor">
+                <div class="encabezado-seccion">
+                    <h2 id="titulo-habilidades">Habilidades técnicas</h2>
+                    <p class="descripcion-seccion">Selecciona una habilidad para consultar detalles prácticos y
+                        evidencia de aplicación</p>
+                </div>
+
+                <!-- Contenedor interactivo dinámico (cargado desde data/habilidades.js) -->
+                <div id="contenedor-habilidades-grupos" class="grupos-habilidades"></div>
+
+                <!-- Fallback accesible sin JavaScript -->
+                <noscript>
+                    <div class="grupos-habilidades">
+                        <!-- Lenguajes -->
+                        <div class="grupo-tarjeta">
+                            <h3>Lenguajes</h3>
+                            <ul class="lista-habilidades">
+                                <li class="habilidad-item" tabindex="0" role="button" aria-expanded="false"
+                                    data-habilidad="Python" data-nivel="Intermedio" data-puntos="2 de 3" data-valor="2">
+                                    <div class="habilidad-cabecera">
+                                        <span class="habilidad-nombre">Python</span>
+                                        <span class="habilidad-texto" aria-hidden="true">Intermedio</span>
+                                    </div>
+                                    <div class="habilidad-indicador" aria-label="Python: nivel intermedio, 2 de 3">
+                                        <div class="segmentos" aria-hidden="true">
+                                            <span class="segmento activo"></span>
+                                            <span class="segmento activo"></span>
+                                            <span class="segmento"></span>
+                                        </div>
+                                    </div>
+                                    <div class="aviso-nivel" aria-hidden="true">
+                                        <span>Python: Intermedio (2 de 3)</span>
+                                    </div>
+                                </li>
+                                <li class="habilidad-item" tabindex="0" role="button" aria-expanded="false"
+                                    data-habilidad="Java" data-nivel="Intermedio" data-puntos="2 de 3" data-valor="2">
+                                    <div class="habilidad-cabecera">
+                                        <span class="habilidad-nombre">Java</span>
+                                        <span class="habilidad-texto" aria-hidden="true">Intermedio</span>
+                                    </div>
+                                    <div class="habilidad-indicador" aria-label="Java: nivel intermedio, 2 de 3">
+                                        <div class="segmentos" aria-hidden="true">
+                                            <span class="segmento activo"></span>
+                                            <span class="segmento activo"></span>
+                                            <span class="segmento"></span>
+                                        </div>
+                                    </div>
+                                    <div class="aviso-nivel" aria-hidden="true">
+                                        <span>Java: Intermedio (2 de 3)</span>
+                                    </div>
+                                </li>
+                                <li class="habilidad-item" tabindex="0" role="button" aria-expanded="false"
+                                    data-habilidad="JavaScript" data-nivel="Intermedio" data-puntos="2 de 3"
+                                    data-valor="2">
+                                    <div class="habilidad-cabecera">
+                                        <span class="habilidad-nombre">JavaScript</span>
+                                        <span class="habilidad-texto" aria-hidden="true">Intermedio</span>
+                                    </div>
+                                    <div class="habilidad-indicador" aria-label="JavaScript: nivel intermedio, 2 de 3">
+                                        <div class="segmentos" aria-hidden="true">
+                                            <span class="segmento activo"></span>
+                                            <span class="segmento activo"></span>
+                                            <span class="segmento"></span>
+                                        </div>
+                                    </div>
+                                    <div class="aviso-nivel" aria-hidden="true">
+                                        <span>JavaScript: Intermedio (2 de 3)</span>
+                                    </div>
+                                </li>
+                                <li class="habilidad-item" tabindex="0" role="button" aria-expanded="false"
+                                    data-habilidad="C / C++" data-nivel="Intermedio" data-puntos="2 de 3"
+                                    data-valor="2">
+                                    <div class="habilidad-cabecera">
+                                        <span class="habilidad-nombre">C / C++</span>
+                                        <span class="habilidad-texto" aria-hidden="true">Intermedio</span>
+                                    </div>
+                                    <div class="habilidad-indicador" aria-label="C / C++: nivel intermedio, 2 de 3">
+                                        <div class="segmentos" aria-hidden="true">
+                                            <span class="segmento activo"></span>
+                                            <span class="segmento activo"></span>
+                                            <span class="segmento"></span>
+                                        </div>
+                                    </div>
+                                    <div class="aviso-nivel" aria-hidden="true">
+                                        <span>C / C++: Intermedio (2 de 3)</span>
+                                    </div>
+                                </li>
+                                <li class="habilidad-item" tabindex="0" role="button" aria-expanded="false"
+                                    data-habilidad="C#" data-nivel="Básico" data-puntos="1 de 3" data-valor="1">
+                                    <div class="habilidad-cabecera">
+                                        <span class="habilidad-nombre">C#</span>
+                                        <span class="habilidad-texto" aria-hidden="true">Básico</span>
+                                    </div>
+                                    <div class="habilidad-indicador" aria-label="C#: nivel básico, 1 de 3">
+                                        <div class="segmentos" aria-hidden="true">
+                                            <span class="segmento activo"></span>
+                                            <span class="segmento"></span>
+                                            <span class="segmento"></span>
+                                        </div>
+                                    </div>
+                                    <div class="aviso-nivel" aria-hidden="true">
+                                        <span>C#: Básico (1 de 3)</span>
+                                    </div>
+                                </li>
+                                <li class="habilidad-item" tabindex="0" role="button" aria-expanded="false"
+                                    data-habilidad="HTML" data-nivel="Intermedio" data-puntos="2 de 3" data-valor="2">
+                                    <div class="habilidad-cabecera">
+                                        <span class="habilidad-nombre">HTML</span>
+                                        <span class="habilidad-texto" aria-hidden="true">Intermedio</span>
+                                    </div>
+                                    <div class="habilidad-indicador" aria-label="HTML: nivel intermedio, 2 de 3">
+                                        <div class="segmentos" aria-hidden="true">
+                                            <span class="segmento activo"></span>
+                                            <span class="segmento activo"></span>
+                                            <span class="segmento"></span>
+                                        </div>
+                                    </div>
+                                    <div class="aviso-nivel" aria-hidden="true">
+                                        <span>HTML: Intermedio (2 de 3)</span>
+                                    </div>
+                                </li>
+                                <li class="habilidad-item" tabindex="0" role="button" aria-expanded="false"
+                                    data-habilidad="CSS" data-nivel="Intermedio" data-puntos="2 de 3" data-valor="2">
+                                    <div class="habilidad-cabecera">
+                                        <span class="habilidad-nombre">CSS</span>
+                                        <span class="habilidad-texto" aria-hidden="true">Intermedio</span>
+                                    </div>
+                                    <div class="habilidad-indicador" aria-label="CSS: nivel intermedio, 2 de 3">
+                                        <div class="segmentos" aria-hidden="true">
+                                            <span class="segmento activo"></span>
+                                            <span class="segmento activo"></span>
+                                            <span class="segmento"></span>
+                                        </div>
+                                    </div>
+                                    <div class="aviso-nivel" aria-hidden="true">
+                                        <span>CSS: Intermedio (2 de 3)</span>
+                                    </div>
+                                </li>
+                                <li class="habilidad-item" tabindex="0" role="button" aria-expanded="false"
+                                    data-habilidad="R" data-nivel="Básico" data-puntos="1 de 3" data-valor="1">
+                                    <div class="habilidad-cabecera">
+                                        <span class="habilidad-nombre">R <small class="aclaracion">(en
+                                                aprendizaje)</small></span>
+                                        <span class="habilidad-texto" aria-hidden="true">Básico</span>
+                                    </div>
+                                    <div class="habilidad-indicador"
+                                        aria-label="R: nivel básico en aprendizaje, 1 de 3">
+                                        <div class="segmentos" aria-hidden="true">
+                                            <span class="segmento activo"></span>
+                                            <span class="segmento"></span>
+                                            <span class="segmento"></span>
+                                        </div>
+                                    </div>
+                                    <div class="aviso-nivel" aria-hidden="true">
+                                        <span>R: Básico (1 de 3) - en aprendizaje</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Web y bases de datos -->
+                        <div class="grupo-tarjeta">
+                            <h3>Web y bases de datos</h3>
+                            <ul class="lista-habilidades">
+                                <li class="habilidad-item" tabindex="0" role="button" aria-expanded="false"
+                                    data-habilidad="SQL (SQL Server)" data-nivel="Intermedio" data-puntos="2 de 3"
+                                    data-valor="2">
+                                    <div class="habilidad-cabecera">
+                                        <span class="habilidad-nombre">SQL (SQL Server)</span>
+                                        <span class="habilidad-texto" aria-hidden="true">Intermedio</span>
+                                    </div>
+                                    <div class="habilidad-indicador"
+                                        aria-label="SQL (SQL Server): nivel intermedio, 2 de 3">
+                                        <div class="segmentos" aria-hidden="true">
+                                            <span class="segmento activo"></span>
+                                            <span class="segmento activo"></span>
+                                            <span class="segmento"></span>
+                                        </div>
+                                    </div>
+                                    <div class="aviso-nivel" aria-hidden="true">
+                                        <span>SQL (SQL Server): Intermedio (2 de 3)</span>
+                                    </div>
+                                </li>
+                                <li class="habilidad-item" tabindex="0" role="button" aria-expanded="false"
+                                    data-habilidad="SQLite" data-nivel="Intermedio" data-puntos="2 de 3" data-valor="2">
+                                    <div class="habilidad-cabecera">
+                                        <span class="habilidad-nombre">SQLite</span>
+                                        <span class="habilidad-texto" aria-hidden="true">Intermedio</span>
+                                    </div>
+                                    <div class="habilidad-indicador" aria-label="SQLite: nivel intermedio, 2 de 3">
+                                        <div class="segmentos" aria-hidden="true">
+                                            <span class="segmento activo"></span>
+                                            <span class="segmento activo"></span>
+                                            <span class="segmento"></span>
+                                        </div>
+                                    </div>
+                                    <div class="aviso-nivel" aria-hidden="true">
+                                        <span>SQLite: Intermedio (2 de 3)</span>
+                                    </div>
+                                </li>
+                                <li class="habilidad-item" tabindex="0" role="button" aria-expanded="false"
+                                    data-habilidad="PostgreSQL" data-nivel="Básico" data-puntos="1 de 3" data-valor="1">
+                                    <div class="habilidad-cabecera">
+                                        <span class="habilidad-nombre">PostgreSQL</span>
+                                        <span class="habilidad-texto" aria-hidden="true">Básico</span>
+                                    </div>
+                                    <div class="habilidad-indicador" aria-label="PostgreSQL: nivel básico, 1 de 3">
+                                        <div class="segmentos" aria-hidden="true">
+                                            <span class="segmento activo"></span>
+                                            <span class="segmento"></span>
+                                            <span class="segmento"></span>
+                                        </div>
+                                    </div>
+                                    <div class="aviso-nivel" aria-hidden="true">
+                                        <span>PostgreSQL: Básico (1 de 3)</span>
+                                    </div>
+                                </li>
+                                <li class="habilidad-item" tabindex="0" role="button" aria-expanded="false"
+                                    data-habilidad="MySQL" data-nivel="Básico" data-puntos="1 de 3" data-valor="1">
+                                    <div class="habilidad-cabecera">
+                                        <span class="habilidad-nombre">MySQL</span>
+                                        <span class="habilidad-texto" aria-hidden="true">Básico</span>
+                                    </div>
+                                    <div class="habilidad-indicador" aria-label="MySQL: nivel básico, 1 de 3">
+                                        <div class="segmentos" aria-hidden="true">
+                                            <span class="segmento activo"></span>
+                                            <span class="segmento"></span>
+                                            <span class="segmento"></span>
+                                        </div>
+                                    </div>
+                                    <div class="aviso-nivel" aria-hidden="true">
+                                        <span>MySQL: Básico (1 de 3)</span>
+                                    </div>
+                                </li>
+                                <li class="habilidad-item" tabindex="0" role="button" aria-expanded="false"
+                                    data-habilidad="FastAPI" data-nivel="Básico" data-puntos="1 de 3" data-valor="1">
+                                    <div class="habilidad-cabecera">
+                                        <span class="habilidad-nombre">FastAPI</span>
+                                        <span class="habilidad-texto" aria-hidden="true">Básico</span>
+                                    </div>
+                                    <div class="habilidad-indicador" aria-label="FastAPI: nivel básico, 1 de 3">
+                                        <div class="segmentos" aria-hidden="true">
+                                            <span class="segmento activo"></span>
+                                            <span class="segmento"></span>
+                                            <span class="segmento"></span>
+                                        </div>
+                                    </div>
+                                    <div class="aviso-nivel" aria-hidden="true">
+                                        <span>FastAPI: Básico (1 de 3)</span>
+                                    </div>
+                                </li>
+                                <li class="habilidad-item" tabindex="0" role="button" aria-expanded="false"
+                                    data-habilidad="React" data-nivel="Básico" data-puntos="1 de 3" data-valor="1">
+                                    <div class="habilidad-cabecera">
+                                        <span class="habilidad-nombre">React</span>
+                                        <span class="habilidad-texto" aria-hidden="true">Básico</span>
+                                    </div>
+                                    <div class="habilidad-indicador" aria-label="React: nivel básico, 1 de 3">
+                                        <div class="segmentos" aria-hidden="true">
+                                            <span class="segmento activo"></span>
+                                            <span class="segmento"></span>
+                                            <span class="segmento"></span>
+                                        </div>
+                                    </div>
+                                    <div class="aviso-nivel" aria-hidden="true">
+                                        <span>React: Básico (1 de 3)</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Datos -->
+                        <div class="grupo-tarjeta">
+                            <h3>Datos</h3>
+                            <ul class="lista-habilidades">
+                                <li class="habilidad-item" tabindex="0" role="button" aria-expanded="false"
+                                    data-habilidad="Pandas y NumPy" data-nivel="Básico" data-puntos="1 de 3"
+                                    data-valor="1">
+                                    <div class="habilidad-cabecera">
+                                        <span class="habilidad-nombre">Pandas y NumPy</span>
+                                        <span class="habilidad-texto" aria-hidden="true">Básico</span>
+                                    </div>
+                                    <div class="habilidad-indicador" aria-label="Pandas y NumPy: nivel básico, 1 de 3">
+                                        <div class="segmentos" aria-hidden="true">
+                                            <span class="segmento activo"></span>
+                                            <span class="segmento"></span>
+                                            <span class="segmento"></span>
+                                        </div>
+                                    </div>
+                                    <div class="aviso-nivel" aria-hidden="true">
+                                        <span>Pandas y NumPy: Básico (1 de 3)</span>
+                                    </div>
+                                </li>
+                                <li class="habilidad-item" tabindex="0" role="button" aria-expanded="false"
+                                    data-habilidad="Microsoft Excel" data-nivel="Intermedio" data-puntos="2 de 3"
+                                    data-valor="2">
+                                    <div class="habilidad-cabecera">
+                                        <span class="habilidad-nombre">Microsoft Excel</span>
+                                        <span class="habilidad-texto" aria-hidden="true">Intermedio</span>
+                                    </div>
+                                    <div class="habilidad-indicador"
+                                        aria-label="Microsoft Excel: nivel intermedio, 2 de 3">
+                                        <div class="segmentos" aria-hidden="true">
+                                            <span class="segmento activo"></span>
+                                            <span class="segmento activo"></span>
+                                            <span class="segmento"></span>
+                                        </div>
+                                    </div>
+                                    <div class="aviso-nivel" aria-hidden="true">
+                                        <span>Microsoft Excel: Intermedio (2 de 3)</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Herramientas -->
+                        <div class="grupo-tarjeta">
+                            <h3>Herramientas</h3>
+                            <ul class="lista-habilidades">
+                                <li class="habilidad-item" tabindex="0" role="button" aria-expanded="false"
+                                    data-habilidad="Git y GitHub" data-nivel="Intermedio" data-puntos="2 de 3"
+                                    data-valor="2">
+                                    <div class="habilidad-cabecera">
+                                        <span class="habilidad-nombre">Git y GitHub</span>
+                                        <span class="habilidad-texto" aria-hidden="true">Intermedio</span>
+                                    </div>
+                                    <div class="habilidad-indicador"
+                                        aria-label="Git y GitHub: nivel intermedio, 2 de 3">
+                                        <div class="segmentos" aria-hidden="true">
+                                            <span class="segmento activo"></span>
+                                            <span class="segmento activo"></span>
+                                            <span class="segmento"></span>
+                                        </div>
+                                    </div>
+                                    <div class="aviso-nivel" aria-hidden="true">
+                                        <span>Git y GitHub: Intermedio (2 de 3)</span>
+                                    </div>
+                                </li>
+                                <li class="habilidad-item" tabindex="0" role="button" aria-expanded="false"
+                                    data-habilidad="Linux" data-nivel="Básico" data-puntos="1 de 3" data-valor="1">
+                                    <div class="habilidad-cabecera">
+                                        <span class="habilidad-nombre">Linux</span>
+                                        <span class="habilidad-texto" aria-hidden="true">Básico</span>
+                                    </div>
+                                    <div class="habilidad-indicador" aria-label="Linux: nivel básico, 1 de 3">
+                                        <div class="segmentos" aria-hidden="true">
+                                            <span class="segmento activo"></span>
+                                            <span class="segmento"></span>
+                                            <span class="segmento"></span>
+                                        </div>
+                                    </div>
+                                    <div class="aviso-nivel" aria-hidden="true">
+                                        <span>Linux: Básico (1 de 3)</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </noscript>
+            </div>
+        </section>
+
+        <!-- 4. Competencias personales -->
+        <section id="competencias" class="seccion seccion-revelar" aria-labelledby="titulo-competencias">
+            <div class="contenedor">
+                <div class="encabezado-seccion">
+                    <h2 id="titulo-competencias">Competencias personales</h2>
+                    <p class="descripcion-seccion">Habilidades blandas respaldadas con evidencia de aplicación real.
+                        Selecciona una para ver más detalles.</p>
+                </div>
+
+                <!-- Contenedor interactivo dinámico (cargado desde data/habilidades.js) -->
+                <div id="contenedor-competencias" class="contenedor-competencias-interactivo"></div>
+
+                <!-- Fallback accesible sin JavaScript -->
+                <noscript>
+                    <div class="grilla-competencias">
+                        <article class="tarjeta-competencia">
+                            <div class="icono-competencia" aria-hidden="true">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                            </div>
+                            <h3>Trabajo en equipo</h3>
+                            <p class="competencia-evidencia">Desarrollé la parte de software de un sistema en un equipo
+                                de 6
+                                personas.</p>
+                        </article>
+
+                        <article class="tarjeta-competencia">
+                            <div class="icono-competencia" aria-hidden="true">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h3>Resolución de problemas</h3>
+                            <p class="competencia-evidencia">Adapté una base de software que no servía para el caso
+                                real.
+                            </p>
+                        </article>
+
+                        <article class="tarjeta-competencia">
+                            <div class="icono-competencia" aria-hidden="true">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                                </svg>
+                            </div>
+                            <h3>Autoaprendizaje</h3>
+                            <p class="competencia-evidencia">Certificados de SQL (CTIC-UNI) y estudio de R por cuenta
+                                propia.</p>
+                        </article>
+
+                        <article class="tarjeta-competencia">
+                            <div class="icono-competencia" aria-hidden="true">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                            </div>
+                            <h3>Orden y documentación</h3>
+                            <p class="competencia-evidencia">Diagramas BPMN, análisis 5S y README de mis repositorios.
+                            </p>
+                        </article>
+
+                        <article class="tarjeta-competencia">
+                            <div class="icono-competencia" aria-hidden="true">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                </svg>
+                            </div>
+                            <h3>Comunicación con usuarios no técnicos</h3>
+                            <p class="competencia-evidencia">Entrevistas y presentación del proyecto a los directivos de
+                                un
+                                albergue.</p>
+                        </article>
+                    </div>
+                </noscript>
+            </div>
+        </section>
+
+        <!-- 5. Proyectos -->
+        <section id="proyectos" class="seccion seccion-revelar" aria-labelledby="titulo-proyectos">
+            <div class="contenedor">
+                <div class="encabezado-seccion">
+                    <h2 id="titulo-proyectos">Proyectos</h2>
+                    <p class="descripcion-seccion">Sistemas funcionales en fase de prueba y desarrollo continuo,
+                        clasificados por entorno de aplicación</p>
+                </div>
+
+                <!-- Categoría 1: Proyectos ejecutados -->
+                <div class="bloque-categoria-proyectos">
+                    <div class="cabecera-categoria-proyectos">
+                        <span class="insignia-categoria-proyectos insignia-ejecutado">Proyectos ejecutados</span>
+                        <p class="texto-categoria-proyectos">Sistemas implementados y aplicados en instituciones con
+                            usuarios y procesos reales</p>
+                    </div>
+                    <div class="grilla-proyectos">
+                        <!-- Proyecto 1: Kardex Albergue -->
+                        <article class="tarjeta-proyecto">
+                            <div class="proyecto-cabecera">
+                                <div class="titulo-con-insignia">
+                                    <h3>Kardex para el almacén de un albergue infantil</h3>
+                                    <span class="insignia">Institucional</span>
+                                </div>
+                            </div>
+                            <p class="etiquetas">Python · Tkinter · SQLite · Equipo de 6</p>
+                            <p class="proyecto-descripcion">
+                                Sistema de escritorio para la Casa Hogar "Ciudad de los Niños de la Inmaculada";
+                                reemplaza el registro manual del almacén de alimentos; yo desarrollé la parte de
+                                software
+                            </p>
+                            <ul class="lista-detalles">
+                                <li>Entradas, salidas, saldos y despachos internos</li>
+                                <li>Lotes con método PEPS/FEFO y alertas preventivas de vencimiento</li>
+                                <li>Control de accesos por roles, panel de administración y auditoría</li>
+                            </ul>
+                            <p class="proyecto-estado">
+                                <span class="punto-estado" aria-hidden="true"></span>
+                                <span><strong>Estado:</strong> En fase de prueba (fase demo) en la institución · En
+                                    desarrollo</span>
+                            </p>
+                            <div class="proyecto-acciones">
+                                <a class="boton boton-chico boton-primario" href="proyecto.html?id=kardex-albergue">
+                                    Ver detalle
+                                </a>
+                                <a class="boton boton-chico boton-secundario"
+                                    href="https://github.com/phuacanjulcar/Kardex-Almacen-V3" target="_blank"
+                                    rel="noopener">
+                                    Ver código <span class="sr-only">(abre repositorio en pestaña nueva)</span>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Categoría 2: Proyectos personales -->
+                <div class="bloque-categoria-proyectos">
+                    <div class="cabecera-categoria-proyectos">
+                        <span class="insignia-categoria-proyectos insignia-personal">Proyectos personales</span>
+                        <p class="texto-categoria-proyectos">Desarrollos autónomos orientados a exploración tecnológica
+                            y aplicaciones web</p>
+                    </div>
+                    <div class="grilla-proyectos">
+                        <!-- Proyecto 2: Kardex Web -->
+                        <article class="tarjeta-proyecto">
+                            <div class="proyecto-cabecera">
+                                <div class="titulo-con-insignia">
+                                    <h3>Kardex Web</h3>
+                                    <span class="insignia">Proyecto personal</span>
+                                </div>
+                            </div>
+                            <p class="etiquetas">FastAPI · React · PostgreSQL</p>
+                            <p class="proyecto-descripcion">
+                                Versión web del Kardex para gestionar inventarios en línea; nació de las limitaciones
+                                del sistema de escritorio
+                            </p>
+                            <ul class="lista-detalles">
+                                <li>Inicio de sesión con JWT y panel de administración</li>
+                                <li>Dashboard con gráficos interactivos y comprobantes en PDF</li>
+                                <li>Publicado en línea, con el código abierto en GitHub</li>
+                            </ul>
+                            <p class="proyecto-estado">
+                                <span class="punto-estado" aria-hidden="true"></span>
+                                <span><strong>Estado:</strong> Publicado en línea en fase demo · En desarrollo y mejora
+                                    continua</span>
+                            </p>
+                            <div class="proyecto-acciones">
+                                <a class="boton boton-chico boton-primario" href="proyecto.html?id=kardex-web">
+                                    Ver detalle
+                                </a>
+                                <a class="boton boton-chico boton-secundario"
+                                    href="https://kardex-almacen-v3-web.vercel.app" target="_blank" rel="noopener">
+                                    Ver demo <span class="sr-only">(abre demostración en pestaña nueva)</span>
+                                </a>
+                                <a class="boton boton-chico boton-secundario"
+                                    href="https://github.com/phuacanjulcar/KARDEX-ALMACEN-V3-WEB" target="_blank"
+                                    rel="noopener">
+                                    Ver código <span class="sr-only">(abre repositorio en pestaña nueva)</span>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="proyectos-pie-seccion">
+                    <a class="boton boton-secundario" href="proyectos.html">
+                        Ver todos los proyectos en desarrollo &rarr;
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Certificaciones -->
+        <section id="certificaciones" class="seccion seccion-revelar" aria-labelledby="titulo-certificaciones">
+            <div class="contenedor">
+                <div class="encabezado-seccion">
+                    <h2 id="titulo-certificaciones">Certificaciones</h2>
+                    <p class="descripcion-seccion">Capacitación académica especializada en gestión y modelado de datos
+                    </p>
+                </div>
+
+                <div class="grilla-certificaciones">
+                    <article class="tarjeta-certificacion">
+                        <div class="icono-certificacion" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="7"></circle>
+                                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                            </svg>
+                        </div>
+                        <div class="info-certificacion">
+                            <h3>SQL – Base de Datos 1</h3>
+                            <p class="meta-certificacion">SQL Server 2022 · CTIC-UNI</p>
+                            <span class="duracion-certificacion">18 horas · 2026</span>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta-certificacion">
+                        <div class="icono-certificacion" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="7"></circle>
+                                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                            </svg>
+                        </div>
+                        <div class="info-certificacion">
+                            <h3>SQL – Base de Datos 2</h3>
+                            <p class="meta-certificacion">SQL Server 2022 · CTIC-UNI</p>
+                            <span class="duracion-certificacion">18 horas · 2026</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Contacto -->
+        <section id="contacto" class="seccion seccion-revelar" aria-labelledby="titulo-contacto">
+            <div class="contenedor">
+                <div class="encabezado-seccion">
+                    <h2 id="titulo-contacto">Contacto</h2>
+                </div>
+
+                <div class="tarjeta tarjeta-contacto">
+                    <p class="contacto-intro">
+                        Si deseas ponerte en contacto conmigo o revisar más detalles sobre mi formación, puedes
+                        escribirme directamente o conectar en mis redes profesionales:
+                    </p>
+
+                    <div class="canales-contacto">
+                        <a class="canal-item" href="mailto:phuacanjulcar@gmail.com">
+                            <div class="canal-icono" aria-hidden="true">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                    </path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </div>
+                            <div class="canal-texto">
+                                <span class="canal-etiqueta">Correo electrónico</span>
+                                <span class="canal-valor">phuacanjulcar@gmail.com</span>
+                            </div>
+                        </a>
+
+                        <a class="canal-item"
+                            href="https://www.linkedin.com/in/pedro-pablo-huacanjulca-rodriguez-162285424"
+                            target="_blank" rel="noopener">
+                            <div class="canal-icono" aria-hidden="true">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                    </path>
+                                    <rect x="2" y="9" width="4" height="12"></rect>
+                                    <circle cx="4" cy="4" r="2"></circle>
+                                </svg>
+                            </div>
+                            <div class="canal-texto">
+                                <span class="canal-etiqueta">LinkedIn</span>
+                                <span class="canal-valor">Pedro Pablo Huacanjulca Rodríguez <span class="sr-only">(abre
+                                        perfil en pestaña nueva)</span></span>
+                            </div>
+                        </a>
+
+                        <a class="canal-item" href="https://github.com/phuacanjulcar" target="_blank" rel="noopener">
+                            <div class="canal-icono" aria-hidden="true">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="canal-texto">
+                                <span class="canal-etiqueta">GitHub</span>
+                                <span class="canal-valor">phuacanjulcar <span class="sr-only">(abre perfil en pestaña
+                                        nueva)</span></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="pie-pagina">
+        <div class="contenedor pie-contenido">
+            <p>Pedro Pablo Huacanjulca Rodríguez · Estudiante de Ingeniería de Sistemas (UNI) · Lima, Perú</p>
+        </div>
+    </footer>
+
+    <!-- Datos y scripts sin dependencias externas -->
+    <script src="data/habilidades.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

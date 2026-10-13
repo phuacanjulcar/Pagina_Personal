@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos · Pedro Pablo Huacanjulca Rodríguez</title>
+    <meta name="description"
+        content="Proyectos de desarrollo de software y análisis de datos de Pedro Pablo Huacanjulca Rodríguez">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Puntero del ratón interactivo y dinámico -->
+    <div id="cursor-punto" class="cursor-punto" aria-hidden="true"></div>
+    <div id="cursor-anillo" class="cursor-anillo" aria-hidden="true"></div>
+
+    <!-- Barra de progreso de lectura superior -->
+    <div id="barra-progreso" class="barra-progreso" role="progressbar" aria-valuenow="0" aria-valuemin="0"
+        aria-valuemax="100" aria-label="Progreso de lectura"></div>
+
+    <!-- Fondo decorativo con movimiento suave en CSS -->
+    <div class="fondo-decorativo" aria-hidden="true">
+        <div class="orbe orbe-1"></div>
+        <div class="orbe orbe-2"></div>
+    </div>
+
+    <!-- Enlace de salto accesible -->
+    <a href="#principal" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- Encabezado y Navegación Principal -->
+    <header class="encabezado">
+        <div class="contenedor barra-navegacion">
+            <a href="index.html#inicio" class="logo" aria-label="Inicio del portafolio">
+                <span class="logo-texto">PP</span>
+            </a>
+
+            <nav id="menu-principal" aria-label="Navegación principal">
+                <ul class="nav-lista">
+                    <li><a href="index.html#inicio" class="nav-enlace">Inicio</a></li>
+                    <li><a href="index.html#sobre-mi" class="nav-enlace">Sobre mí</a></li>
+                    <li><a href="index.html#habilidades" class="nav-enlace">Habilidades</a></li>
+                    <li><a href="index.html#competencias" class="nav-enlace">Competencias</a></li>
+                    <li><a href="proyectos.html" class="nav-enlace activo" aria-current="page">Proyectos</a></li>
+                    <li><a href="index.html#certificaciones" class="nav-enlace">Certificaciones</a></li>
+                    <li><a href="index.html#contacto" class="nav-enlace">Contacto</a></li>
+                    <li class="nav-subrayado-item" aria-hidden="true"><span class="nav-subrayado"></span></li>
+                </ul>
+            </nav>
+
+            <button id="boton-tema" class="boton-tema" type="button" aria-label="Cambiar a tema oscuro"
+                aria-pressed="false">
+                <svg class="icono-tema icono-sol" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="icono-tema icono-luna" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <svg class="icono-tema icono-neon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <main id="principal" class="seccion">
+        <div class="contenedor">
+            <!-- Aviso accesible de estado de desarrollo con SVG limpio (sin emojis) -->
+            <div class="aviso-desarrollo" role="status">
+                <svg class="icono-aviso" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                <p>Sección en desarrollo: proyectos en fase de prueba y fase demo en construcción</p>
+            </div>
+
+            <!-- Miga de pan accesible -->
+            <nav class="miga-pan" aria-label="Ruta de navegación">
+                <ol>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li aria-current="page">Proyectos</li>
+                </ol>
+            </nav>
+
+            <div class="encabezado-seccion">
+                <h1>Proyectos</h1>
+                <p class="descripcion-seccion">Sistemas funcionales clasificados en proyectos ejecutados y personales; haz clic en "Ver detalle" para consultar la arquitectura, tecnologías y funcionalidades completas</p>
+            </div>
+
+            <!-- Categoría 1: Proyectos ejecutados -->
+            <div class="bloque-categoria-proyectos">
+                <div class="cabecera-categoria-proyectos">
+                    <span class="insignia-categoria-proyectos insignia-ejecutado">Proyectos ejecutados</span>
+                    <p class="texto-categoria-proyectos">Sistemas implementados y aplicados en instituciones con usuarios y procesos reales</p>
+                </div>
+                <div class="grilla-proyectos">
+                    <!-- Proyecto 1: Kardex Albergue -->
+                    <article class="tarjeta-proyecto aparecido">
+                        <div class="proyecto-cabecera">
+                            <div class="titulo-con-insignia">
+                                <h2>Kardex para el almacén de un albergue infantil</h2>
+                                <span class="insignia">Institucional</span>
+                            </div>
+                        </div>
+                        <p class="etiquetas">Python · Tkinter · SQLite · Equipo de 6</p>
+                        <p class="proyecto-descripcion">
+                            Sistema de escritorio para el almacén de alimentos de la Casa Hogar "Ciudad de los Niños de la Inmaculada"; reemplaza el registro manual del almacén de alimentos; yo desarrollé la parte de software
+                        </p>
+                        <ul class="lista-detalles">
+                            <li>Entradas, salidas, saldos y despachos internos</li>
+                            <li>Lotes con método PEPS/FEFO y alertas preventivas de vencimiento</li>
+                            <li>Control de accesos por roles, panel de administración y auditoría</li>
+                        </ul>
+                        <p class="proyecto-estado">
+                            <span class="punto-estado" aria-hidden="true"></span>
+                            <span><strong>Estado:</strong> En fase de prueba (fase demo) en la institución · En desarrollo</span>
+                        </p>
+                        <div class="proyecto-acciones">
+                            <a class="boton boton-chico boton-primario" href="proyecto.html?id=kardex-albergue">
+                                Ver detalle
+                            </a>
+                            <a class="boton boton-chico boton-secundario"
+                                href="https://github.com/phuacanjulcar/Kardex-Almacen-V3" target="_blank" rel="noopener">
+                                Ver código <span class="sr-only">(abre repositorio en pestaña nueva)</span>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Categoría 2: Proyectos personales -->
+            <div class="bloque-categoria-proyectos">
+                <div class="cabecera-categoria-proyectos">
+                    <span class="insignia-categoria-proyectos insignia-personal">Proyectos personales</span>
+                    <p class="texto-categoria-proyectos">Desarrollos autónomos orientados a exploración tecnológica y aplicaciones web</p>
+                </div>
+                <div class="grilla-proyectos">
+                    <!-- Proyecto 2: Kardex Web -->
+                    <article class="tarjeta-proyecto aparecido">
+                        <div class="proyecto-cabecera">
+                            <div class="titulo-con-insignia">
+                                <h2>Kardex Web</h2>
+                                <span class="insignia">Proyecto personal</span>
+                            </div>
+                        </div>
+                        <p class="etiquetas">FastAPI · React · PostgreSQL</p>
+                        <p class="proyecto-descripcion">
+                            Versión web del Kardex para gestionar inventarios en línea; nació de las limitaciones del sistema de escritorio
+                        </p>
+                        <ul class="lista-detalles">
+                            <li>Inicio de sesión con JWT y panel de administración</li>
+                            <li>Dashboard con gráficos interactivos y comprobantes en PDF</li>
+                            <li>Publicado en línea, con el código abierto en GitHub</li>
+                        </ul>
+                        <p class="proyecto-estado">
+                            <span class="punto-estado" aria-hidden="true"></span>
+                            <span><strong>Estado:</strong> Publicado en línea en fase demo · En desarrollo y mejora continua</span>
+                        </p>
+                        <div class="proyecto-acciones">
+                            <a class="boton boton-chico boton-primario" href="proyecto.html?id=kardex-web">
+                                Ver detalle
+                            </a>
+                            <a class="boton boton-chico boton-secundario" href="https://kardex-almacen-v3-web.vercel.app"
+                                target="_blank" rel="noopener">
+                                Ver demo <span class="sr-only">(abre demostración en pestaña nueva)</span>
+                            </a>
+                            <a class="boton boton-chico boton-secundario"
+                                href="https://github.com/phuacanjulcar/KARDEX-ALMACEN-V3-WEB" target="_blank"
+                                rel="noopener">
+                                Ver código <span class="sr-only">(abre repositorio en pestaña nueva)</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Proyecto 3: Análisis de inventario en R -->
+                    <article class="tarjeta-proyecto aparecido">
+                        <div class="proyecto-cabecera">
+                            <div class="titulo-con-insignia">
+                                <h2>Análisis de inventario en R</h2>
+                                <span class="insignia">En aprendizaje</span>
+                            </div>
+                        </div>
+                        <p class="etiquetas">R · RStudio · Análisis de datos</p>
+                        <p class="proyecto-descripcion">
+                            Caso práctico de análisis de inventario: importación y limpieza de datos, cálculo automatizado de saldos y generación de gráficos exploratorios
+                        </p>
+                        <ul class="lista-detalles">
+                            <li>Limpieza y transformación de datasets de inventario</li>
+                            <li>Cálculo de rotación de productos y saldos</li>
+                            <li>Visualización estadística de tendencias de consumo</li>
+                        </ul>
+                        <p class="proyecto-estado">
+                            <span class="punto-estado" aria-hidden="true"></span>
+                            <span><strong>Estado:</strong> En desarrollo · Fase demo</span>
+                        </p>
+                        <div class="proyecto-acciones">
+                            <span class="boton boton-chico boton-secundario" style="opacity: 0.75; cursor: default;">
+                                Detalle próximamente
+                            </span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <div class="proyectos-pie-seccion">
+                <a class="boton boton-secundario" href="index.html#proyectos">&larr; Volver a la página principal</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="pie-pagina">
+        <div class="contenedor pie-contenido">
+            <p>Pedro Pablo Huacanjulca Rodríguez · Estudiante de Ingeniería de Sistemas (UNI) · Lima, Perú</p>
+        </div>
+    </footer>
+
+    <!-- Scripts sin dependencias externas -->
+    <script src="data/proyectos.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
